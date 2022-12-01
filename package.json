@@ -6,14 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no tests are implemented yet \" && exit 1",
-	"test-local": "mocha --exit --timeout 1000 --recursive test/local"
+    "test-local": "mocha --exit --timeout 1000 --recursive test/local"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-	"chai": "^4.2.0",
-    "mocha": "^8.1.3",
-	"mochawesome": "^7.0.0"
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "mochawesome": "^7.0.0"
   }
 }
