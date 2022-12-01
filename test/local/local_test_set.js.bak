@@ -29,6 +29,6 @@ describe('add() function ', function() {
 	
 	it('should return moimoi if inputs were moi and moi', function() {
 		const ans = add("moi", "moi");
-		expect(ans).to.equal("moimoi");
+		expect(ans).to.equal("5moi");
 	});
 });

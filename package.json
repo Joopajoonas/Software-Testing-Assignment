@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "mocha --exit --timeout 1000 --recursive test/local",
-    "test-local": "mocha --exit --timeout 1000 --recursive test/local"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
