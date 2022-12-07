@@ -11,12 +11,12 @@
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
   "dependencies": {
-	"coveralls": "*",
-	"mocha-lcov-reporter": "*"
   },
   "devDependencies": {
 	"chai": "^4.2.0",
     "mocha": "^8.1.3",
-	"mochawesome": "^7.0.0"
+	"mochawesome": "^7.0.0",
+	"coveralls": "*",
+	"mocha-lcov-reporter": "*"
   }
 }
