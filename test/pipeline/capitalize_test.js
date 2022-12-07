@@ -1,0 +1,75 @@
+import {expect, assert} from 'chai';
+import capitalize from "../../src/capitalize.js";
+
+describe('capitalize() function ', function() {
+    
+	it('should return Hello if input was hello', function() {
+		const ans = capitalize("hello");
+		expect(ans).to.equal("Hello");
+	});
+	
+	it('should return Hello if input was HELLO', function() {
+		const ans = capitalize("HELLO");
+		expect(ans).to.equal("Hello");
+	});
+	
+	it('should return Hello if input was hElLo', function() {
+		const ans = capitalize("hElLo");
+		expect(ans).to.equal("Hello");
+	});
+	
+	it('should return Hello if input was hELLO', function() {
+		const ans = capitalize("hELLO");
+		expect(ans).to.equal("Hello");
+	});
+	
+	it('should return H if input was H', function() {
+		const ans = capitalize("H");
+		expect(ans).to.equal("H");
+	});
+	
+	it('should return H if input was h', function() {
+		const ans = capitalize("h");
+		expect(ans).to.equal("H");
+	});
+	
+	it('should return Hello hello if input was hello hello', function() {
+		const ans = capitalize("hello hello");
+		expect(ans).to.equal("Hello hello");
+	});
+	
+	it('should return .hello if input was .hello', function() {
+		const ans = capitalize(".hello");
+		expect(ans).to.equal(".hello");
+	});
+	
+	it('should return .hello if input was .HELLO', function() {
+		const ans = capitalize(".HELLO");
+		expect(ans).to.equal(".hello");
+	});
+	
+	it('should return 1hello if input was 1hello', function() {
+		const ans = capitalize("1hello");
+		expect(ans).to.equal("1hello");
+	});
+	
+	it('should return 1hello if input was 1HELLO', function() {
+		const ans = capitalize("1HELLO");
+		expect(ans).to.equal("1hello");
+	});
+	
+	it('should return 1 if input was 1', function() {
+		const ans = capitalize("1");
+		expect(ans).to.equal("1");
+	});
+	
+	it('should return ! if input was !', function() {
+		const ans = capitalize("!");
+		expect(ans).to.equal("!");
+	});
+	
+	it('should return "1" if input was 1', function() {
+		const ans = capitalize(1);
+		expect(ans).to.equal("1");
+	});
+});
