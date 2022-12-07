@@ -5,10 +5,15 @@
   "main": "",
   "type": "module",
   "scripts": {
-    "test": "mocha --exit --timeout 1000 --recursive test/local"
+    "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
+	  "test-local": "mocha --exit --timeout 1000 --recursive test/local"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
+  "dependencies": {
+	  "coveralls": "*",
+	  "mocha-lcov-reporter": "*"
+  },
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.1.0",

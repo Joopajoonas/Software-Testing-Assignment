@@ -5,7 +5,7 @@
   "main": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1",
+    "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
 	"test-local": "mocha --exit --timeout 1000 --recursive test/local"
   },
   "author": "Riku & Joonas - Project group",

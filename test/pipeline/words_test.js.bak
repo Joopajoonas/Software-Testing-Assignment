@@ -1,0 +1,59 @@
+import {expect, assert} from 'chai';
+import words from "../../src/words.js";
+
+describe('words() function ', function() {
+    
+	it("should return ['fred', 'barney', 'pebbles'] if input was 'fred, barney, & pebbles'", function() {
+		const ans = words('fred, barney, & pebbles');
+		expect(ans).to.be.an('array').that.includes('fred');
+		expect(ans).to.be.an('array').that.includes('barney');
+		expect(ans).to.be.an('array').that.includes('pebbles');
+	});
+	
+	it("should return ['fred', 'barney', '&', 'pebbles'] if input was ('fred, barney, & pebbles', /[^, ]+/g)", function() {
+		const ans = words('fred, barney, & pebbles', /[^, ]+/g);
+		expect(ans).to.be.an('array').that.includes('fred');
+		expect(ans).to.be.an('array').that.includes('barney');
+		expect(ans).to.be.an('array').that.includes('&');
+		expect(ans).to.be.an('array').that.includes('pebbles');
+	});
+	
+	it("should return ['1', '2'] if input was '1 2'", function() {
+		const ans = words('1 2');
+		expect(ans).to.be.an('array').that.includes('1');
+		expect(ans).to.be.an('array').that.includes('2');
+	});
+	
+	it("should return error if input was 1 (Integer)", function() {
+		expect(function(){
+			words(1)
+		}).to.throw('string.match is not a function');
+	});
+	
+	it("should return error if input was true (boolean)", function() {
+		expect(function(){
+			words(true)
+		}).to.throw('string.match is not a function');
+	});
+	
+	it("should return ['Hello', 'world', 'Nice'. 'to', 'meet', 'you', 'again'] if input was ('Hello world!Nice.to_meet-you:again', /[^\W_]+/g)", function() {
+		const ans = words('Hello world!Nice.to_meet-you:again', /[^\W_]+/g);
+		expect(ans).to.be.an('array').that.includes('Hello');
+		expect(ans).to.be.an('array').that.includes('world');
+		expect(ans).to.be.an('array').that.includes('nice');
+		expect(ans).to.be.an('array').that.includes('to');
+		expect(ans).to.be.an('array').that.includes('meet');
+		expect(ans).to.be.an('array').that.includes('you');
+		expect(ans).to.be.an('array').that.includes('again');
+	});
+	
+	it("should return ['Hello', 'world', 'Nice'. 'to', 'meet', 'you', 'again'] if input was ('Hello world!Nice.to_meet-you:again', /[\W_]+/g)", function() {
+		const ans = words('Hello world!Nice.to_meet-you:again', /[\W_]+/g);
+		expect(ans).to.be.an('array').that.includes(' ');
+		expect(ans).to.be.an('array').that.includes('!');
+		expect(ans).to.be.an('array').that.includes('.');
+		expect(ans).to.be.an('array').that.includes('_');
+		expect(ans).to.be.an('array').that.includes('-');
+		expect(ans).to.be.an('array').that.includes(':');
+	});
+});
