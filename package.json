@@ -6,17 +6,17 @@
   "type": "module",
   "scripts": {
     "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
-	"test-local": "mocha --exit --timeout 1000 --recursive test/local"
+	  "test-local": "mocha --exit --timeout 1000 --recursive test/local"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
-	"chai": "^4.2.0",
+	  "chai": "^4.2.0",
     "mocha": "^8.1.3",
-	"mochawesome": "^7.0.0",
-	"coveralls": "*",
-	"mocha-lcov-reporter": "*"
+	  "mochawesome": "^7.0.0",
+	  "coveralls": "*",
+	  "mocha-lcov-reporter": "*"
   }
 }
