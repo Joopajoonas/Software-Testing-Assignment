@@ -1,0 +1,40 @@
+import {expect, assert} from 'chai';
+import isLength from "../../src/isLength.js";
+
+describe('isLength() function ', function() {
+    
+	it("should return true if input was 1", function() {
+		const ans = isLength(1);
+		expect(ans).to.equal(true);
+	});
+	
+	it("should return true if input was 0", function() {
+		const ans = isLength(0);
+		expect(ans).to.equal(true);
+	});
+	
+	it("should return true if input was Number.MAX_SAFE_INTEGER", function() {
+		const ans = isLength(Number.MAX_SAFE_INTEGER);
+		expect(ans).to.equal(true);
+	});
+	
+	it("should return false if input was Number.MAX_INTEGER", function() {
+		const ans = isLength(Number.MAX_INTEGER);
+		expect(ans).to.equal(false);
+	});
+	
+	it("should return false if input was 'one'", function() {
+		const ans = isLength('one');
+		expect(ans).to.equal(false);
+	});
+	
+	it("should return false if input was true", function() {
+		const ans = isLength(true);
+		expect(ans).to.equal(false);
+	});
+	
+	it("should return false if input was 0", function() {
+		const ans = isLength(0);
+		expect(ans).to.equal(false);
+	});
+});

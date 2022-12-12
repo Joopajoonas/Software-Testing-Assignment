@@ -31,5 +31,19 @@ describe('add() function ', function() {
 		const ans = add("moi", "moi");
 		expect(ans).to.equal("moimoi");
 	});
+	
+	it('should return 0 if inputs were 0 and 0', function() {
+		const ans = add(0, 0);
+		expect(ans).to.equal(0);
+	});
+	
+	it('should return 0 if inputs were -1 and 1', function() {
+		const ans = add(-1, 1);
+		expect(ans).to.equal(0);
+	});
+	
+	it('should return "word word!" if inputs were "word " and "word!"', function() {
+		const ans = add("word ", "word!");
+		expect(ans).to.equal("word word!");
+	});
 });
-heippahei
