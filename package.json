@@ -10,10 +10,6 @@
     "nyc": "nyc",
     "coverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline"
   },
-  "nyc": {
-    "include": "src",
-    "exclude": "src/.internal"
-  },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
   "devDependencies": {
