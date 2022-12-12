@@ -1,19 +1,22 @@
 {
-  "name": "software-testing-assignment",
+  "name": "Software-testing-assignment",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1",
-	"test-local": "mocha --exit --timeout 1000 --recursive test/local"
+    "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
+    "test-local": "mocha --exit --timeout 1000 --recursive test/local",
+    "nyc": "nyc",
+    "coverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-	"chai": "^4.2.0",
+    "chai": "^4.2.0",
+    "coveralls": "*",
+    "jscover": "*",
     "mocha": "^8.1.3",
-	"mochawesome": "^7.0.0"
+    "c8": "*"
   }
 }
