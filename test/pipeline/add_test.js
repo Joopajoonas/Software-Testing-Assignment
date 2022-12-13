@@ -22,9 +22,9 @@ describe('add() function ', function() {
 		expect(ans).to.equal(Number.MAX_VALUE - 1);
 	});
 	
-	it('should return 5moi if inputs were 5 and moi', function() {
-		const ans = add(5, "moi");
-		expect(ans).to.equal("5moi");
+	it('should return 5hello if inputs were 5 and hello', function() {
+		const ans = add(5, "hello");
+		expect(ans).to.equal("5hello");
 	});
 	
 	it('should return moimoi if inputs were moi and moi', function() {

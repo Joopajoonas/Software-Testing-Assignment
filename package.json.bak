@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
-<<<<<<< HEAD
     "test-local": "mocha --exit --timeout 1000 --recursive test/local",
     "nyc": "nyc",
     "coverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline"
@@ -19,19 +18,5 @@
     "jscover": "*",
     "mocha": "^8.1.3",
     "c8": "*"
-=======
-	  "test-local": "mocha --exit --timeout 1000 --recursive test/local"
-  },
-  "author": "Riku & Joonas - Project group",
-  "license": "MIT",
-  "dependencies": {
-	  "coveralls": "*",
-	  "mocha-lcov-reporter": "*"
-  },
-  "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.1.0",
-    "mochawesome": "^7.0.0"
->>>>>>> 9a46422d3108e8420aedf189b9f25de1379e22ec
   }
 }

@@ -42,8 +42,8 @@ describe('add() function ', function() {
 		expect(ans).to.equal(0);
 	});
 	
-	it('should return true if inputs were true and true', function() {
-		const ans = add(true, true);
-		expect(ans).to.equal(true);
+	it('should return "word word!" if inputs were "word " and "word!"', function() {
+		const ans = add("word ", "word!");
+		expect(ans).to.equal("word word!");
 	});
 });
