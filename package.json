@@ -7,7 +7,6 @@
   "scripts": {
     "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
     "test-local": "mocha --exit --timeout 1000 --recursive test/local",
-    "nyc": "nyc",
     "coverage": "c8 --exclude=src/.internal npm test && c8 report --reporter=text-lcov | coveralls",
     "acoverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline",
 	"cover:test": "c8 --reporter=html --reporter=text mocha --exit --timeout 1000 --recursive test/pipeline",
