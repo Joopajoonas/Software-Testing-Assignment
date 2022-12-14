@@ -18,9 +18,9 @@ jobs:
         with:
           version: 10.x
       - run: npm ci
-      - run: npm run cover:test
-      - run: npm run cover:report
-      - name: Coveralls
+      - run: npm run test-cov
+      - run: npm run test-coveralls
+      - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1.1.0
         with:
           github-token: ${{ secrets.github_token }}
