@@ -25,7 +25,8 @@ describe('filter() function ', function() {
 
 	});
 	
-    it("should return object ['barney']", function() {
+    it("should return array of objects  [{'user':'barney', 'active':true}, \
+										{'user':'John', 'active':true}]", function() {
 		
 		const users = [
 		{ 'user': 'barney', 'active': true },
@@ -38,5 +39,27 @@ describe('filter() function ', function() {
 								{ 'user': 'John', 'active': true }]);
 
 	});	
+	
+    it("should return an array with no objects", function() {
+		
+		const users = [
+		{ 'user': 'barney', 'active': false },
+		{ 'user': 'fred', 'active': false }
+		];
+		const result = filter(users, ({ active }) => active);
+
+		expect(result).to.eql([[]]);
+
+	});
+
+    it("should return an array with no objects, when input array is empty", function() {
+		
+		const users = [];
+		const result = filter(users, ({ active }) => active);
+
+		expect(result).to.eql([[]]);
+
+	});
+
 
 });

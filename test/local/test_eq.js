@@ -3,6 +3,11 @@ import eq from "../../src/eq.js";
 
 describe('eq() function ', function() {
 	
+	it('Should return a boolean value', function() {
+		const result = eq( false, false);
+		expect(result).to.be.a('Boolean');
+	});
+	
 	it('Should return true, when inputs are "a" and "a"', function() {
 		const result = eq( 'a', 'a');
 		expect(result).to.equal(true);

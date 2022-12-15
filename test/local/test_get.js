@@ -19,4 +19,9 @@ describe('get() function ', function() {
 		const result = get(object, 'a.b.c', 'default');
 		expect(result).to.equal('default');
 	});	
+	
+	it("Should return {'c':3}, when input is 'object' and an array ['a', '0', 'b',]", function() {
+		const result = get(object, ['a', '0', 'b']);
+		expect(result).to.include({'c':3});
+	});
 });
