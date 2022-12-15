@@ -22,7 +22,6 @@ describe('filter() function ', function() {
 		const result = filter(users, ({ active }) => active);
 
 		expect(result).to.eql([{ 'user': 'barney', 'active': true }]);
-
 	});
 	
     it("should return array of objects  [{'user':'barney', 'active':true}, \
