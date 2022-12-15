@@ -15,15 +15,18 @@
 	"cover:test": "c8 --reporter=html --reporter=text mocha --exit --timeout 1000 --recursive test/pipeline",
     "cover:report": "c8 report --reporter=text-lcov | coveralls",
 	"test-cov": "c8 npm run test",
-    "test-coveralls": "c8 npm run test | node ./bin/coveralls.js --verbose"
+    "test-coveralls": "c8 npm run test-cov | node ./bin/coveralls.js --verbose",
+	"coverasdf": "c8 npm test && c8 report --reporter=text-lcov | coveralls"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
   "devDependencies": {
     "c8": "^7.12.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.1.1",
     "mocha": "^8.1.3",
     "mocha-lcov-reporter": "1.2.0"
+  },
+  "dependencies": {
+    "coveralls": "^3.1.1"
   }
 }

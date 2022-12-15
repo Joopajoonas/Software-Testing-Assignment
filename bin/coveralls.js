@@ -2,7 +2,7 @@
 
 'use strict';
 
-import { handleInput } from '..';
+import handleInput from '../coverage/tmp';
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
