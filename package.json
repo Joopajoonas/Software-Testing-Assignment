@@ -3,20 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "", 
-  "bin": {
-    "coveralls": "./bin/coveralls.js"
-  },
+  "main": "",
   "scripts": {
     "test": "mocha --exit --timeout 1000 --recursive test/pipeline",
     "test-local": "mocha --exit --timeout 1000 --recursive test/local",
     "coverage": "c8 --exclude=src/.internal npm test && c8 report --reporter=text-lcov | coveralls",
     "acoverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline",
-	"cover:test": "c8 --reporter=html --reporter=text mocha --exit --timeout 1000 --recursive test/pipeline",
-    "cover:report": "c8 report --reporter=text-lcov | coveralls",
-	"test-cov": "c8 npm run test",
-    "test-coveralls": "c8 npm run test-cov | node ./bin/coveralls.js --verbose",
-	"coverasdf": "c8 npm test && c8 report --reporter=text-lcov | coveralls"
+	"coveralls": "c8 --check-coverage npm run test"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
