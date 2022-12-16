@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for test/pipeline/tonumber_test.js</title>
+    <title>Code coverage report for src/keys.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">test/pipeline</a> tonumber_test.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> keys.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">86.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>32/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">86.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>32/37</span>
             </div>
         
             
@@ -93,7 +93,14 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -123,37 +130,51 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {expect, assert} from 'chai';
-import toNumber from "../../src/toNumber.js";
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import arrayLikeKeys from './.internal/arrayLikeKeys.js'
+import isArrayLike from './isArrayLike.js'
 &nbsp;
-describe('toNumber() function ', function() {
-    
-	it("should return 1 if input was 1", function() {
-		const ans = toNumber(1);
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return 1 if input was '1'", function() {
-		const ans = toNumber('1');
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return Infinity if input was Infinity", function() {
-		const ans = toNumber(Infinity);
-		expect(ans).to.equal(Infinity);
-	});
-	
-	it("should return 1 if input was true", function() {
-		const ans = toNumber(true);
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return 0 if input was false", function() {
-		const ans = toNumber(false);
-		expect(ans).to.equal(0);
-	});
-	
-});</pre></td></tr></table></pre>
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @since 0.1.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @see values, valuesIn
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1
+ *   this.b = 2
+ * }
+ *
+ * Foo.prototype.c = 3
+ *
+ * keys(new Foo)
+ * // =&gt; ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * keys('hi')
+ * // =&gt; ['0', '1']
+ */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function keys(object) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return isArrayLike(object)</span>
+<span class="cstat-no" title="statement not covered" >    ? arrayLikeKeys(object)</span>
+<span class="cstat-no" title="statement not covered" >    : Object.keys(Object(object))</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+export default keys
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -162,14 +183,14 @@ describe('toNumber() function ', function() {
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2022-12-16T17:50:46.121Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     

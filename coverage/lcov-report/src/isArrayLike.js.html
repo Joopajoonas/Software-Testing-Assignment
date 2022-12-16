@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for test/pipeline/tonumber_test.js</title>
+    <title>Code coverage report for src/isArrayLike.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">test/pipeline</a> tonumber_test.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> isArrayLike.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>30/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>30/30</span>
             </div>
         
             
@@ -118,42 +118,42 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {expect, assert} from 'chai';
-import toNumber from "../../src/toNumber.js";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import isLength from './isLength.js'
 &nbsp;
-describe('toNumber() function ', function() {
-    
-	it("should return 1 if input was 1", function() {
-		const ans = toNumber(1);
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return 1 if input was '1'", function() {
-		const ans = toNumber('1');
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return Infinity if input was Infinity", function() {
-		const ans = toNumber(Infinity);
-		expect(ans).to.equal(Infinity);
-	});
-	
-	it("should return 1 if input was true", function() {
-		const ans = toNumber(true);
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return 0 if input was false", function() {
-		const ans = toNumber(false);
-		expect(ans).to.equal(0);
-	});
-	
-});</pre></td></tr></table></pre>
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * isArrayLike([1, 2, 3])
+ * // =&gt; true
+ *
+ * isArrayLike(document.body.children)
+ * // =&gt; true
+ *
+ * isArrayLike('abc')
+ * // =&gt; true
+ *
+ * isArrayLike(Function)
+ * // =&gt; false
+ */
+function isArrayLike(value) {
+  return value != null &amp;&amp; typeof value !== 'function' &amp;&amp; isLength(value.length)
+}
+&nbsp;
+export default isArrayLike
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -162,14 +162,14 @@ describe('toNumber() function ', function() {
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2022-12-16T17:50:46.121Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     

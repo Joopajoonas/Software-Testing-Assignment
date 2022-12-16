@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for test/pipeline/tonumber_test.js</title>
+    <title>Code coverage report for test/pipeline/test_get.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">test/pipeline</a> tonumber_test.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">test/pipeline</a> test_get.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
@@ -89,15 +89,7 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -124,35 +116,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {expect, assert} from 'chai';
-import toNumber from "../../src/toNumber.js";
+import get from "../../src/get.js";
 &nbsp;
-describe('toNumber() function ', function() {
-    
-	it("should return 1 if input was 1", function() {
-		const ans = toNumber(1);
-		expect(ans).to.equal(1);
+describe('get() function ', function() {
+	
+	const object = { 'a': [{ 'b': { 'c': 3 } }] };
+&nbsp;
+	it('Should return 3, when input is "object" and "a[0].b.c"', function() {
+		const result = get(object, 'a[0].b.c');
+		expect(result).to.equal(3);
 	});
 	
-	it("should return 1 if input was '1'", function() {
-		const ans = toNumber('1');
-		expect(ans).to.equal(1);
+	it("Should return 3, when input is 'object' and an array ['a', '0', 'b', 'c']", function() {
+		const result = get(object, ['a', '0', 'b', 'c']);
+		expect(result).to.equal(3);
 	});
+&nbsp;
+	it("Should return 'default', when input is object, 'a.b.c', 'default'", function() {
+		const result = get(object, 'a.b.c', 'default');
+		expect(result).to.equal('default');
+	});	
 	
-	it("should return Infinity if input was Infinity", function() {
-		const ans = toNumber(Infinity);
-		expect(ans).to.equal(Infinity);
+	it("Should return {'c':3}, when input is 'object' and an array ['a', '0', 'b',]", function() {
+		const result = get(object, ['a', '0', 'b']);
+		expect(result).to.include({'c':3});
 	});
-	
-	it("should return 1 if input was true", function() {
-		const ans = toNumber(true);
-		expect(ans).to.equal(1);
-	});
-	
-	it("should return 0 if input was false", function() {
-		const ans = toNumber(false);
-		expect(ans).to.equal(0);
-	});
-	
 });</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
