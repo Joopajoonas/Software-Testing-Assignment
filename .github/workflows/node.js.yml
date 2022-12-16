@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [14, 16]
+        node: [14]
         os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@master
@@ -18,22 +18,9 @@ jobs:
         with:
           version: 10.x
       - run: npm ci
-      - run: npm run test-cov
-      - run: npm run test-coveralls
+      - run: npm run coveralls
       - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1.1.0
+        if: github.repository == 'Joopajoonas/Software-Testing-Assignment'
+        uses: coverallsapp/github-action@v1.1.2 
         with:
-          github-token: ${{ secrets.github_token }}
-          parallel: true
-          flag-name: ${{matrix.os}}-node-${{ matrix.node }}
-
-
-  finish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@v1.1.0
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
+          github-token: ${{ github.token }}
