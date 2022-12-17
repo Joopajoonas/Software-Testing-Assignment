@@ -9,7 +9,7 @@
     "test-local": "mocha --exit --timeout 1000 --recursive test/local",
     "coverage": "c8 --exclude=src/.internal npm test && c8 report --reporter=text-lcov | coveralls",
     "acoverage": "c8 --reporter=lcov --exclude=src/.internal mocha --exit --recursive test/pipeline",
-	"coveralls": "c8 --exclude=src/.internal --check-coverage --reporter=lcov npm run test"
+    "coveralls": "c8 --exclude=src/.internal --check-coverage --reporter=lcov npm run test"
   },
   "author": "Riku & Joonas - Project group",
   "license": "MIT",
